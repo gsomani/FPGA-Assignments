@@ -1,0 +1,7 @@
+create_clock -period 12.500 -name clk -waveform {0.000 6.2500} [get_ports clk]
+set_input_delay -clock [get_clocks clk] -min -add_delay 0.000 [get_ports {din[*]}]
+set_input_delay -clock [get_clocks clk] -max -add_delay 0.200 [get_ports {din[*]}]
+set_output_delay -clock [get_clocks clk] -min -add_delay -2.000 [get_ports {dout[*]}]
+set_output_delay -clock [get_clocks clk] -max -add_delay 2.100 [get_ports {dout[*]}]
+set_output_delay -clock [get_clocks clk] -min -add_delay -2.000 [get_ports {exp[*]}]
+set_output_delay -clock [get_clocks clk] -max -add_delay 2.100 [get_ports {exp[*]}]
